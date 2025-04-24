@@ -23,5 +23,5 @@ staticSemantics.o: staticSemantics.cpp staticSemantics.h
 	$(CC) $(CFLAGS) -c staticSemantics.cpp
 
 clean:
-	rm -rf *.o *.preorder P3  
+	rm -rf *.o *.preorder *.asm P3  
 
