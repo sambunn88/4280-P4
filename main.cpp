@@ -8,6 +8,7 @@
 #include "parser.h"
 #include "testTree.h"
 #include "staticSemantics.h"
+#include "codeGen.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -61,7 +62,10 @@ int main (int argc, char **argv) {
     traversePreOrder(tree, fileName);
 
     //Run function to create symbol table
-    staticSemantics(tree);
+    set<string> symbolTable = staticSemantics(tree);
+
+    //Generate ASM Code
+    codeGen(tree, fileName, symbolTable);   
 
 
     //remove temporary file if it was used

@@ -169,6 +169,12 @@ node_t* B() {
         p->child1 = G();
         return p;
     }
+    else if (tk->type == 1 && tk->text[0] == '(') {
+        node_t* s = S();
+        node_t* p = genNode("B");
+        p->child1 = s;
+        return p;
+    }
     else {
         fprintf(stderr, "Parser Error: No valid entry for B nonterminal");
         exit(1);

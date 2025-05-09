@@ -1,11 +1,11 @@
 CC = g++
 CFLAGS = -g -Wall 
-TARGET = P3
+TARGET = P4
 
-all: p3
+all: p4
 
-p3: staticSemantics.o testTree.o scanner.o parser.o main.o
-	$(CC) $(CFLAGS) staticSemantics.o testTree.o scanner.o parser.o main.o -o P3
+p4: codeGen.o staticSemantics.o testTree.o scanner.o parser.o main.o
+	$(CC) $(CFLAGS) codeGen.o staticSemantics.o testTree.o scanner.o parser.o main.o -o P4
 
 main.o: main.cpp 
 	$(CC) $(CFLAGS) -c main.cpp -o main.o
@@ -22,6 +22,9 @@ testTree.o: testTree.cpp testTree.h
 staticSemantics.o: staticSemantics.cpp staticSemantics.h
 	$(CC) $(CFLAGS) -c staticSemantics.cpp
 
+codeGen.o: codeGen.cpp codeGen.h
+	$(CC) $(CFLAGS) -c codeGen.cpp
+
 clean:
-	rm -rf *.o *.preorder *.asm P3  
+	rm -rf *.o *.preorder *.asm P4  
 

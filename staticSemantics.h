@@ -19,5 +19,5 @@ bool verify(string);
 void insert(token);
 void searchNodes(node_t*);
 void printTable();
-void staticSemantics(node_t*);
+set<string> staticSemantics(node_t*);
 

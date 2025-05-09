@@ -69,9 +69,9 @@ void printTable() {
     }
 }
 
-void staticSemantics(node_t* root) { 
+set<string> staticSemantics(node_t* root) { 
     //Traverse tree and make table
     searchNodes(root);
-    //Print table if no errors
-    printTable();
+    return table;
+
 }
